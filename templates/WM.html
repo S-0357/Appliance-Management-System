@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Washing Machines</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1 id="container">Available Washing Machines</h1>
+   
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Brand</th>
+            <th>Rating</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Model</th>
+            <th>Action</th>
+        </tr>
+        {% for appliance in appliances %}
+        <tr>
+            <td>{{ appliance[0] }}</td>
+            <td>{{ appliance[1] }}</td>
+            <td>{{ appliance[2] }}</td>
+            <td>{{ appliance[3] }}</td>
+            <td>{{ appliance[4] }}</td>
+            <td>{{ appliance[5] }}</td>
+            <td>
+                <form action="{{ url_for('delete_appliance', table='WM', id=appliance[0]) }}" method="POST">
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+                <a href="{{ url_for('update_wm', id=appliance[0]) }}">
+                    <button class="update-button">Update</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="button-container">
+        <a href="{{ url_for('add_wm') }}">
+            <button>If you Have Add a Brand</button>
+        </a>
+        <a href="{{ url_for('WM') }}">
+            <button>Refresh</button>
+        </a>
+        <a href="{{ url_for('index') }}">
+            <button>Button to Home Page not our Home</button>
+        </a>
+    </div>
+</body>
+</html>

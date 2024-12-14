@@ -1,0 +1,211 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Welcome Page Styling */
+#welcome-page {
+    position: relative;
+    padding: 50px;
+    width: 90%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: rgb(163, 20, 63);
+    z-index: 1; /* Ensure content is above the background */
+}
+
+#welcome_img {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+     /* Apply blur to the background */
+    z-index: -1; /* Place it behind the content */
+    opacity: 0.5; /* Adjust opacity if needed */
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    z-index: 2;
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.2em;
+    z-index: 2;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Stock Management Page Styling */
+#stock-page {
+    text-align: center;
+    padding: 30px;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.appliance-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.appliance {
+    margin: 20px;
+    padding: 20px;
+    width: 250px;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.appliance img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.appliance h2 {
+    margin-top: 15px;
+    color: #007bff;
+}
+
+.appliance p {
+    color: #555;
+    font-size: 1em;
+}
+
+.appliance:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.appliance-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .appliance-list {
+        flex-direction: column;
+    }
+}
+
+/* Wrapper to group the header and table */
+#container {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* Header styling */
+h1 {
+    font-family: "comic sans ms";
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0;
+    color: rgb(148, 39, 112);
+    margin-bottom: 20px;
+}
+
+/* Center table in the middle of the page */
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Table headers styling */
+th {
+    background-color: #90749e;
+    color: rgb(97, 16, 16);
+    font-family: "didot", sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Table row styling */
+td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #f8f7fa;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 1.2em;
+}
+
+/* Add hover effect on table rows */
+tr:hover {
+    background-color: #ba8bcf;
+}
+
+/* Styling for table borders */
+table, th, td {
+    border: 1px solid #01445f;
+}
+
+/* Center the table vertically in the middle of the page */
+table {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Button container */
+.button-container {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.button-container a {
+    margin-right: 10px; /* Space between buttons */
+}
+
+.delete-button {
+    width: 100px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    padding: 5px; /* Adjust padding as needed */
+}

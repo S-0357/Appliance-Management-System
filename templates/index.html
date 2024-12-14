@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godown Stock Management</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="welcome_img"><img src="{{ url_for('static', filename='images/page.png')}}"></div>
+    <!-- Welcome Page -->
+    <div id="welcome-page">
+        <h1>Welcome to Our GadgetHub Store</h1>
+        <p><b>THE APPLIANCES AVAILABLE IN OUR STORE ARE FABULOUS</b></p>
+        <p><b>Note: This is not as big as Doraemon's Pocket. Now We Have Little Stock of Little Appliances</b></p>
+        <button id="start-btn">Let's See The Store</button>
+    </div>
+
+    <!-- Stock Management Page -->
+    <div id="stock-page" style="display: none;">
+        <h1>List Of Appliances</h1>
+        <div class="appliance-list">
+            <a href="/fridge" class="appliance-link">
+                <div class="appliance">
+                    <img src="{{ url_for('static', filename='images/fridge.png')}}" alt="Fridge">
+                    <h2>Refrigerators</h2>
+                    <p>Click TO SEE THE LIST OF BRANDS AVAILABLE</p>
+                </div>
+            </a>
+            
+            <a href="/AC" class="appliance-link">
+                <div class="appliance">
+                    <img src="{{ url_for('static', filename='images/AC.png')}}" alt="AC">
+                    <h2>AIR CONDITIONER</h2>
+                    <p>Click TO SEE THE LIST OF BRANDS AVAILABLE</p>
+                </div>
+            </a>
+
+            <a href="/IB" class="appliance-link">
+                <div class="appliance">
+                    <img src="{{ url_for('static', filename='images/ironbox.png')}}" alt="Iron Box">
+                    <h2>IRON BOX</h2>
+                    <p>Click TO SEE THE LIST OF BRANDS AVAILABLE</p>
+                </div>
+            </a>
+
+            <a href="/TV" class="appliance-link">
+                <div class="appliance">
+                    <img src="{{ url_for('static', filename='images/TV.png')}}" alt="Television">
+                    <h2>TELEVISION</h2>
+                    <p>Click TO SEE THE LIST OF BRANDS AVAILABLE</p>
+                </div>
+            </a>
+
+            <a href="/WM" class="appliance-link">
+                <div class="appliance">
+                    <img src="{{ url_for('static', filename='images/WashM.png')}}" alt="Washing machine">
+                    <h2>WASHING MACHINE</h2>
+                    <p>Click TO SEE THE LIST OF BRANDS AVAILABLE</p>
+                </div>
+            </a>
+        </div>
+    
+        <!-- table creation -->
+        <h1 id="container">ELECTRICAL APPLIANCES</h1>
+        <table border="1" align="center" size="100">
+            <tr>
+                <th>Category</th>
+                <th>Id</th>
+                <th>Brand</th>
+                <th>Rating</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                
+            </tr>
+            {% for appliance in appliances %}
+            <tr>
+                <td>{{ appliance[0] }}</td>
+                <td>{{ appliance[1] }}</td>
+                <td>{{ appliance[2] }}</td>
+                <td>{{ appliance[3] }}</td>
+                <td>{{ appliance[4] }}</td>
+                <td>{{ appliance[5] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
